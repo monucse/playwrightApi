@@ -1,0 +1,11 @@
+1. How do you handle alerts and pop-ups in WebDriverIO?
+
+Ans : List of available functions/commands to handle confirm popup in WebDriverIO
+
+        isAlertOpen(): This function returns the boolean value. Returns true if confirm popup is displayed, false otherwise.
+        getAlertText(): This function returns the text of confirm alert box (Ex: Press a button)
+        acceptAlert(): This function simulates the OK button click.
+        dismissAlert(): This function or command simulates the CANCEL button click on the confirm box
+        sendAlertText(): This function sets the input field text to given string
+
+

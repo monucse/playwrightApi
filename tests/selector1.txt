@@ -1,0 +1,58 @@
+*************************Ways to locate Dynamic Web Elements in Selenium***************
+
+Web Applications comprise of one or more HTML pages. 
+All the individual units/fields such as - text box, button, etc., 
+that are contained in a web page, are called Web Elements.
+On any HTML page, all the elements present on the Data Object Model (DOM)
+and are rendered by the browser are called Static elements. 
+The elements which are invoked at the run-time and are dynamically
+added to the web page are called Dynamic elements.
+
+
+*********Various elements locators or selectors that used for web elements**********
+There are multiple element locators (or selectors) that can be used for 
+finding/accessing the web elements such as: 
+ID, Name, Class Name, Linked Text, Partial Linked Text, Tag Name, XPath, CSS Selector.
+
+*********************So how do we handle dynamic elements anyway?*************
+It is advised that Selenium Test Programmers write their own Customized XPath and CSS Selectors.
+Syntax for Customized XPath:
+//tagName[@attribute = “value”]
+
+Eg: //input[@type = “email”]
+
+
+Regular Expressions in Custom XPath Syntax: //tagName[contains(@attribute, ‘value’)]
+
+Eg: //input[contains(@name, ‘userName’)]
+
+Regular Expressions in Custom CSS Syntax: tagName[attribute*= ‘value’]
+
+Eg: input[name *= ‘userName’]
+
+
+*******************************************Questions****************************************
+Q1: If any web element is not exist and you are trying to find that web element.
+    So which error you will get ?
+Q2: If two or more than two web element is exist with same selectors or locators.
+    So in this case you will get any error if No , so which web element will be accessable.
+Q3: Select a Checkbox using WebdriverIO?
+
+
+
+
+**************************************Answers************************************************
+A3: We will use the click() method then also will verify with isSelected() method that it should be clicked
+    if it's not clicked again click.
+
+
+tagname#id or #id
+tagname.classname or .classname
+tagname[idname='value']
+//tagname[@idname='value']
+tagname[id*='user']
+//tagname[contains(@id,'user')]
+tagname[id^='user']
+//tagname[starts-with(@id,'user')]
+tagname[id$='name']
+//tagname[ends-with(@id,'name')]

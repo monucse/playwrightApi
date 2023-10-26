@@ -1,0 +1,80 @@
+******************************* Id,class*************************************
+tagname#id or #id -> input#username or #username
+tagname.classname or .classname if multiple classname for one element then remove space and put dot between each classname
+eg : class="form-control private-form__control login-password m-bottom-3" for password field.
+ans : input.form-control.private-form__control.login-password.m-bottom-3
+Note : we can check if you are able to access element with one classname and with combination of two or more classname.
+
+tagname[id='value']
+    i18n-string[data-key='login.signupLink.text']
+
+tagname[idname='value'][idname='value'] -- css with two attributes    
+
+    input[id='username'][type='email']
+
+
+Dynamically changing the selector:
+
+    -> Contains the text in css: [*]
+        input[id*='user']
+        input[id*='name']
+
+        id = 
+        test_123
+        test_345
+        test_456
+        input[id*=test_]
+
+    -> Start the text in css: [^]
+        input[id^='user']
+        input[id^='name']
+
+        id = 
+        test_123
+        test_345
+        test_456
+        input[id^=test_] 
+
+    -> Start the text in css: [^]
+        input[id^='user']
+        input[id^='name']
+
+        id = 
+        test_123
+        test_345
+        test_456
+        input[id^=test] 
+
+    -> End with text in css: [$]  
+        input[id$='user']
+        input[id$='name']
+
+        id = 
+        test_123_env
+        test_345_env
+        test_456_env
+        input[id$=_env] 
+
+
+
+
+******************************* XPath ********************************************
+//tagname[@idname='value']
+
+    //i18n-string[@data-key='login.signupLink.text']
+    //i18n-string[@data-key='login.signupLink.cta']
+
+//tagname[@idname='value' and @idname='value'] -- xpath with two attributes
+    //input[@id='username' and @type='email'] -- xpath with two attributes
+
+Xpath- //button[starts-with(@id, 'save')]
+Xpath- //button[starts-with(@id, 'save') and contains(@class,'publish')]
+Xpath- //button[starts-with(@id, 'save') or contains(@class,'publish')]
+
+Xpath- //button[contains(@id, 'name')]
+Xpath- //button[contains(@id, 'save') and starts-with(@class,'publish')]   
+Xpath- //button[contains(@id, 'save') or starts-with(@class,'publish')]   
+
+Xpath- //button[ends-with(@id, '_1234')]
+Xpath- //button[ends-with(@id, '_1234') and starts-with(@class,'publish')]   
+Xpath- //button[ends-with(@id, '_1234') or starts-with(@class,'publish')]   
